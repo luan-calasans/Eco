@@ -1,0 +1,32 @@
+# Ignore a pasta Library (gerada pelo Unity)
+Library/
+
+# Ignore a pasta Logs (logs de execução do Unity)
+Logs/
+
+# Ignore pasta de compilação temporária
+obj/
+
+# Ignore arquivos de Visual Studio
+.vs/
+*.csproj
+*.sln
+
+# Ignore arquivos temporários de sistema
+.DS_Store
+Thumbs.db
+
+# Ignore arquivos de build gerados
+Build/
+Temp/
+
+# Ignore pacotes de cache
+Packages/manifest.json.meta
+Packages/manifest.json.orig
+Packages/packages-lock.json.meta
+
+# Ignore logs de upgrade
+UpgradeLog.htm
+
+# Ignore configurações locais de IDE
+.vscode/
