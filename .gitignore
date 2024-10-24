@@ -17,6 +17,7 @@ obj/
 Thumbs.db
 
 # Ignore arquivos de build gerados
+Build/
 Temp/
 
 # Ignore pacotes de cache
