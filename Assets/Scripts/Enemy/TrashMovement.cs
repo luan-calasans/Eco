@@ -4,12 +4,13 @@ public class TrashMovement : MonoBehaviour
 {
     public float fallSpeed = 2f;
     public float bottomLimit = -5f;
-    //public AudioClip collectionSound;
-    public TrashEngine trashEngine; 
+    public TrashEngine trashEngine;  
+    public EscapedTrashCounter escapedTrashCounter;  
 
     void Start()
     {
         trashEngine = FindObjectOfType<TrashEngine>();
+        escapedTrashCounter = FindObjectOfType<EscapedTrashCounter>(); 
     }
 
     void Update()
@@ -23,7 +24,9 @@ public class TrashMovement : MonoBehaviour
 
         if (transform.position.y < bottomLimit)
         {
-            Destroy(gameObject);
+            trashEngine.TrashMissed(); 
+            escapedTrashCounter.IncrementEscapedTrash(); 
+            Destroy(gameObject); 
         }
     }
 
@@ -37,18 +40,7 @@ public class TrashMovement : MonoBehaviour
 
     private void CollectTrash()
     {
-        //PlayCollectionSound();
-        trashEngine.IncreaseScore(); 
+        trashEngine.IncreaseScore();
         Destroy(gameObject); 
     }
-
-    //private void PlayCollectionSound()
-    //{
-    //    GameObject soundObject = new GameObject("CollectionSound");
-    //    AudioSource audioSource = soundObject.AddComponent<AudioSource>();
-    //    audioSource.clip = collectionSound;
-    //    audioSource.playOnAwake = false;
-    //    audioSource.Play();
-    //    Destroy(soundObject, collectionSound.length);
-    //}
 }

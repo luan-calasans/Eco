@@ -1,13 +1,20 @@
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class QuitApplication : MonoBehaviour
 {
     public void QuitGame()
     {
-        Application.Quit();
-
     #if UNITY_EDITOR
-        Debug.Log("Jogo encerrado! (Somente disponível no build)");
+            EditorApplication.isPlaying = false; 
+            Debug.Log("Fechando o modo de execução no Editor.");
+
+    #elif UNITY_WEBGL
+            Application.ExternalCall("alert", "Feche esta aba para sair");
+    #else
+            Application.Quit();
     #endif
     }
 }
