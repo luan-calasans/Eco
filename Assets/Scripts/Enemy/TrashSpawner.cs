@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class TrashSpawner : MonoBehaviour
 {
-    public GameObject trashPrefab;  
-    public float spawnInterval = 2f;
-    public int initialSpawnCount = 9;
-    public int groupSize = 4;
-    private List<GameObject> activeTrash = new List<GameObject>();
+    public GameObject[] trashPrefabs;  
+    public float spawnInterval = 2f; 
+    public int initialSpawnCount = 9;  
+    public int groupSize = 4;          
+    private List<GameObject> activeTrash = new List<GameObject>(); 
 
     void Start()
     {
-        // Spawn inicial de resíduos
         for (int i = 0; i < initialSpawnCount; i++)
         {
             SpawnTrash();
@@ -39,7 +38,10 @@ public class TrashSpawner : MonoBehaviour
     private void SpawnTrash()
     {
         Vector3 spawnPosition = new Vector3(Random.Range(-5f, 5f), 5f, 0f);
-        GameObject newTrash = Instantiate(trashPrefab, spawnPosition, Quaternion.identity);
+
+        int randomIndex = Random.Range(0, trashPrefabs.Length); 
+        GameObject newTrash = Instantiate(trashPrefabs[randomIndex], spawnPosition, Quaternion.identity);
+
         activeTrash.Add(newTrash);
 
         float randomFallSpeed = Random.Range(1f, 5f);

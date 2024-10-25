@@ -3,17 +3,17 @@ using TMPro;
 
 public class TrashEngine : MonoBehaviour
 {
-    public TMP_Text scoreText;  
-    public GameObject gameOverPanel; 
-    private int score = 0;  
-    private int lostTrashCount = 0; 
-    private const int maxLostTrash = 10;  
+    public TMP_Text scoreText;
+    public GameObject gameOverPanel;
+    private int score = 0;
+    private int lostTrashCount = 0;
+    private const int maxLostTrash = 10;
     public float speed = 10f;
 
     void OnEnable()
     {
         UpdateUI();
-        gameOverPanel.SetActive(false); 
+        gameOverPanel.SetActive(false);
     }
 
     void Update()
@@ -37,29 +37,29 @@ public class TrashEngine : MonoBehaviour
 
     public void IncreaseScore()
     {
-        score++; 
+        score++;
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        scoreText.text = "Pontuação: " + score; 
+        scoreText.text = "Pontuação: " + score;
     }
 
     public void TrashMissed()
     {
-        lostTrashCount++; 
+        lostTrashCount++;
         if (lostTrashCount >= maxLostTrash)
         {
-            GameOver(); 
+            GameOver();
         }
     }
 
     private void GameOver()
     {
-        Time.timeScale = 0; 
-        gameOverPanel.SetActive(true); 
-        SetTrashSortingOrder(0); 
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
+        SetTrashSortingOrder(0);
     }
 
     private void SetTrashSortingOrder(int sortingOrder)
@@ -70,8 +70,13 @@ public class TrashEngine : MonoBehaviour
             SpriteRenderer renderer = trash.GetComponent<SpriteRenderer>();
             if (renderer != null)
             {
-                renderer.sortingOrder = sortingOrder; 
+                renderer.sortingOrder = sortingOrder;
             }
         }
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }
