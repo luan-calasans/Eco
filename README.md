@@ -25,7 +25,7 @@
 - A pontuação do jogador e a quantidade de lixo escapado são exibidas no topo da tela.
 - Pressione o botão **pausar** (canto inferior esquerdo) para parar o jogo.
 
-Para jogar, basta acessar o link: [https://luan-calasans.github.io/eco/](https://luan-calasans.github.io/eco/)
+Para jogar, basta acessar o link: [https://luan-calasans.github.io/Eco/](https://luan-calasans.github.io/Eco/)
 
 ## Estrutura do Projeto
 
