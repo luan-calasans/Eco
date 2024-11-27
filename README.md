@@ -1,7 +1,7 @@
 
-# Eco - Coleta de Lixo
+# Eco Coleta de Lixo
 
-**Eco - Coleta de Lixo** é um jogo 2D simples e educativo onde os jogadores controlam uma lixeira para coletar o lixo que cai do topo da tela. O objetivo é evitar que o lixo ultrapasse a tela, enquanto coleta o máximo possível para aumentar sua pontuação.
+**Eco Coleta de Lixo** é um jogo 2D simples e educativo onde os jogadores controlam uma lixeira para coletar o lixo que cai do topo da tela. O objetivo é evitar que o lixo ultrapasse a tela, enquanto coleta o máximo possível para aumentar sua pontuação.
 
 ## Funcionalidades
 
